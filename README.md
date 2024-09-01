@@ -1,4 +1,4 @@
-# Labjack Provider
+# Labjack Sensing
 
 Allows interfacing with the Labjack T7-Pro DAQ. 
 
