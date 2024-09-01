@@ -10,7 +10,6 @@ int main() {
     LabJack labjack = LabJack();
     // Main loop
     while (true) {
-        // Your main loop logic here
         temp = thermocouple.read_temperature(labjack);
         load = load_cell.read_weight(labjack);
         std::cout << "Temp: " << temp << std::endl;
