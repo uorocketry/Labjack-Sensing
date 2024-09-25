@@ -3,13 +3,11 @@
 Allows interfacing with the Labjack T7-Pro DAQ. 
 
 ## Build
-### Makefile
-make 
 ### CMake
-mkdir build
-cd build
-cmake ..
-cmake --build . 
+- mkdir build
+- cd build
+- cmake ..
+- cmake --build . 
 
 ### Windows 
 Install WSL 
