@@ -3,9 +3,10 @@
 
 #include <iostream>
 #include <assert.h>
-#include "peripheral.hpp" 
+#include "peripheral.hpp"
 
-enum class ThermocoupleType : long {
+enum class ThermocoupleType : long
+{
     B = 6001,
     E = 6002,
     J = 6003,
@@ -17,13 +18,15 @@ enum class ThermocoupleType : long {
     C = 6009
 };
 
-class Thermocouple : public Peripheral {
+class Thermocouple : public Peripheral
+{
 public:
-    Thermocouple(const char* initialName = "AIN0", ThermocoupleType type = ThermocoupleType::K);
-    void test_peripheral(LabJack handle) override;
-    double read_temperature(LabJack handle);   
+    Thermocouple(const char *initialName = "AIN0", ThermocoupleType type = ThermocoupleType::K);
+    void test_peripheral(int handle) override;
+    double read_temperature(int handle);
+
 private:
-    const char* name; 
+    const char *name;
     ThermocoupleType type;
 };
 
