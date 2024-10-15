@@ -4,13 +4,15 @@
 #include <LabJackM.h>
 #include "labjack.hpp"
 
-class Peripheral {
+class Peripheral
+{
 public:
-    virtual void test_peripheral(LabJack handle) = 0;
-    virtual ~Peripheral() {} 
+    virtual void test_peripheral(int handle) = 0;
+    virtual ~Peripheral() {}
 };
 
-enum class PeripheralStatus {
+enum class PeripheralStatus
+{
     SUCCESS,
     FAILURE
 };
