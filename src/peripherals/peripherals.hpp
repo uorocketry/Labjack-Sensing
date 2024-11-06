@@ -5,5 +5,6 @@
 #include "servo.hpp"
 #include "load_cell.hpp"
 #include "thermocouple.hpp"
+#include "pressure_transducer.hpp"
 
 #endif // PERIPHERALS_HPP
