@@ -27,20 +27,15 @@ void PressureTransducer::test_peripheral(int handle)
  */
 float PressureTransducer::read_pressure(int handle)
 {
-    // Variable to store the voltage reading
     double voltage = 0.0;
 
-    // Read the voltage from the LabJack
-    int error = LJM_eReadName(handle, name_pos, &voltage); // Assuming name_pos is the analog input channel
+    int error = LJM_eReadName(handle, name_pos, &voltage);
 
     // Check for errors in reading the voltage
     if (error != LJME_NOERROR)
     {
-        // Handle the error (e.g., log it, print it, etc.)
-        return -1.0; // Return error value
+        return -1.0;
     }
-
-    // Calculate the pressure using the given formula
     float pressure = pressure_range * (voltage - v_lower_limit) / (v_upper_limit - v_lower_limit);
 
     return pressure;
@@ -53,10 +48,8 @@ void PressureTransducer::set_negative_channel(int handle)
     int negative_channel = std::stoi(std::string(name_neg).substr(3)); // Extract the channel number from name_neg
     int error = LJM_eWriteName(handle, negative_channel_name.c_str(), negative_channel);
 
-    // Check for errors in setting the negative channel
     if (error != LJME_NOERROR)
     {
-        // Handle the error (e.g., log it, print it, etc.)
         std::cerr << "Error setting negative channel: " << error << std::endl;
     }
 }
