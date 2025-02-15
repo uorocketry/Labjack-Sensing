@@ -8,7 +8,7 @@
 class PressureTransducer : public Peripheral
 {
 public:
-    PressureTransducer(const char *initialNamePos = "AIN4", const char *initialNameNeg = "AIN5", int PressureRange = 1, float vLowerLimit = 1.0, float vUpperLimit = 3.5, int handle = 1);
+    PressureTransducer(const char *initialNamePos = "AIN1", const char *initialNameNeg = "AIN5", int PressureRange = 1, float vLowerLimit = 1.0, float vUpperLimit = 3.5, int handle = 1);
     void test_peripheral(int handle) override;
     float read_pressure(int handle);
     void set_negative_channel(int handle);
